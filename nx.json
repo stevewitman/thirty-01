@@ -17,6 +17,9 @@
     "app01-e2e": {
       "tags": [],
       "implicitDependencies": ["app01"]
+    },
+    "material": {
+      "tags": []
     }
   }
 }
