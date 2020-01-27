@@ -1,0 +1,22 @@
+{
+  "npmScope": "workspace01",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "app01": {
+      "tags": []
+    },
+    "app01-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app01"]
+    }
+  }
+}
