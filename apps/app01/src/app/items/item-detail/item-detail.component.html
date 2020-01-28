@@ -3,8 +3,9 @@
     <mat-card-title>Item Details</mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
-  <mat-card-content>
-    <form (submit)="saved.emit(currentItem)">
+  <form (submit)="saved.emit(currentItem)">
+    <mat-card-content>
+      <div  fxLayout="column">
       <p>Item Id: {{ currentItem.id }}</p>
       <mat-form-field>
         <input
@@ -22,9 +23,12 @@
           type="text"
           name="description"></textarea>
         </mat-form-field>
-      <button mat-raised-button color="default" type="button" (click)="cancelled.emit(currentItem)">Clear</button>
-      <button mat-raised-button color="warn" type="button" (click)="deleted.emit(currentItem)">Delete</button>
-      <button mat-raised-button color="primary" type="submit">Save</button>
-    </form>
-  </mat-card-content>
+      </div>
+        <div align="end">
+          <button mat-raised-button color="default" type="button" (click)="cancelled.emit(currentItem)">Clear</button>
+          <button mat-raised-button color="warn" type="button" (click)="deleted.emit(currentItem)">Delete</button>
+          <button mat-raised-button color="primary" type="submit">Save</button>
+      </div>
+    </mat-card-content>
+  </form>
 </mat-card>
