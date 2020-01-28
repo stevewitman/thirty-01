@@ -1,19 +1,23 @@
 <div class='some-page-wrapper'>
 <mat-toolbar color="primary">
-  <span>test Items Page</span>
+  <span>Items Page</span>
 </mat-toolbar>
-
   <div class='row'>
     <div class='column'>
-      <mat-card>
-        <workspace01-items-list class="list"></workspace01-items-list>
-        <p *ngFor="let item of items$ | async">{{ item.name }}</p>
-      </mat-card>
+      <workspace01-items-list
+        class="list"
+        [items]="items$ | async"
+        (selected)=selectItem($event)
+      ></workspace01-items-list>
     </div>
     <div class='column'>
-      <mat-card>
-        <workspace01-item-detail class="detail"></workspace01-item-detail>
-      </mat-card>
+      <workspace01-item-detail
+        class="detail"
+        [item]="selectedItem"
+        (saved)="saveItem($event)"
+        (cancelled)="cancel()"
+        (deleted)="deleteItem($event)"
+      ></workspace01-item-detail>
     </div>
   </div>
 </div>

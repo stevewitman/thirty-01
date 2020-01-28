@@ -10,25 +10,20 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  createItem() {
-    console.log('Method - Create Item');
-  }
-
   getItems() {
-    console.log('Method - Get Items');
     return this.httpClient.get(this.URL)
   }
 
-  getItem(id) {
-    console.log('Method - Get Item', id);
+  createItem(item) {
+    return this.httpClient.post(this.URL, item);
   }
 
-  updateItem() {
-    console.log('Method - Update Item');
+  updateItem(item) {
+    return this.httpClient.patch(this.URL + '/' + item.id, item)
   }
 
-  deleteItem() {
-    console.log('Method - Delete Item');
+  deleteItem(id) {
+    return this.httpClient.delete(this.URL + '/' + id)
   }
 
 }

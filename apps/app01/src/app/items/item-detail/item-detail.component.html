@@ -1,1 +1,30 @@
-<h3>Item Details</h3>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Item Details</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form (submit)="saved.emit(currentItem)">
+      <p>Item Id: {{ currentItem.id }}</p>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Name"
+          type="text"
+          [(ngModel)]="currentItem.name"
+          name="name">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Description"
+          [(ngModel)]="currentItem.description"
+          type="text"
+          name="description"></textarea>
+        </mat-form-field>
+      <button mat-raised-button color="default" type="button" (click)="cancelled.emit(currentItem)">Clear</button>
+      <button mat-raised-button color="warn" type="button" (click)="deleted.emit(currentItem)">Delete</button>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </form>
+  </mat-card-content>
+</mat-card>
