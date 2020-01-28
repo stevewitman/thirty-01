@@ -1,0 +1,19 @@
+<div class='some-page-wrapper'>
+<mat-toolbar color="primary">
+  <span>test Items Page</span>
+</mat-toolbar>
+
+  <div class='row'>
+    <div class='column'>
+      <mat-card>
+        <workspace01-items-list class="list"></workspace01-items-list>
+        <p *ngFor="let item of items$ | async">{{ item.name }}</p>
+      </mat-card>
+    </div>
+    <div class='column'>
+      <mat-card>
+        <workspace01-item-detail class="detail"></workspace01-item-detail>
+      </mat-card>
+    </div>
+  </div>
+</div>

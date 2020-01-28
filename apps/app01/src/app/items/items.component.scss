@@ -1,0 +1,29 @@
+// .some-page-wrapper {
+//   margin: 0px;
+//   background-color: red;
+// }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 10px;
+}
+
+// .blue-column {
+//   background-color: blue;
+//   height: 100px;
+// }
+
+// .green-column {
+//   background-color: green;
+//   height: 100px;
+// }
